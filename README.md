@@ -20,7 +20,7 @@ Para rodar este projeto, você precisará ter os seguintes itens instalados em s
 - **Java 17+**: A aplicação foi desenvolvida usando a versão 17 ou superior do Java.
 - **Maven**: O Maven é utilizado para gerenciar as dependências e compilar o projeto.
 
-### Documentação de Configuração do Banco de Dados
+Documentação de Configuração do Banco de Dados
 
 ```Configurações do DataSource
 spring.datasource.url=jdbc:mysql://localhost/challenge?createDatabaseIfNotExist=true&useSSL=true

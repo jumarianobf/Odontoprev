@@ -43,7 +43,7 @@ Após a compilação, o Maven irá gerar um arquivo JAR no diretório target. O 
 ```
 <seu_diretorio_do_projeto>\target\<nome_do_projeto>-<versao>.jar
 ```
-E então é so rodar sua Application!
+E então é so rodar seu Application!
 
   ##
   
@@ -65,8 +65,8 @@ E então é so rodar sua Application!
 - **DELETE** `/api/usuarios/{id}`: Remove um usuário.
 
 ## Previsões
-- **GET** `/api/previsao-usuario`: Lista todas as previsões de usuários.
-- **POST** `/api/previsao-usuario`: Cria uma nova previsão de usuário.
+- **GET** `/api/previsao-usuario/listar`: Lista todas as previsões de usuários.
+- **POST** `/api/previsao-usuario/cadastrar`: Cria uma nova previsão de usuário.
 - **GET** `/api/previsao-usuario/{id}`: Retorna os detalhes de uma previsão específica.
 - **PUT** `/api/previsao-usuario/{id}`: Atualiza uma previsão de usuário.
 - **DELETE** `/api/previsao-usuario/{id}`: Remove uma previsão de usuário.
@@ -74,8 +74,8 @@ E então é so rodar sua Application!
 ---
 
 ## Atendimentos
-- **GET** `/api/atendimento-usuario`: Lista todos os atendimentos de usuários.
-- **POST** `/api/atendimento-usuario`: Cria um novo atendimento de usuário.
+- **GET** `/api/atendimento-usuario/listar`: Lista todos os atendimentos de usuários.
+- **POST** `/api/atendimento-usuario/cadastrar`: Cria um novo atendimento de usuário.
 - **GET** `/api/atendimento-usuario/{id}`: Retorna os detalhes de um atendimento específico.
 - **PUT** `/api/atendimento-usuario/{id}`: Atualiza um atendimento de usuário.
 - **DELETE** `/api/atendimento-usuario/{id}`: Remove um atendimento de usuário.
@@ -83,8 +83,8 @@ E então é so rodar sua Application!
 ---
 
 ## Imagens
-- **GET** `/api/imagem-usuario`: Lista todas as imagens de usuários.
-- **POST** `/api/imagem-usuario`: Adiciona uma nova imagem de usuário.
+- **GET** `/api/imagem-usuario/listar`: Lista todas as imagens de usuários.
+- **POST** `/api/imagem-usuario/cadastrar`: Adiciona uma nova imagem de usuário.
 - **GET** `/api/imagem-usuario/{id}`: Retorna os detalhes de uma imagem específica.
 - **PUT** `/api/imagem-usuario/{id}`: Atualiza as informações de uma imagem de usuário.
 - **DELETE** `/api/imagem-usuario/{id}`: Remove uma imagem de usuário.
@@ -92,8 +92,8 @@ E então é so rodar sua Application!
 ---
 
 ## Endereços
-- **GET** `/api/endereco-usuario`: Lista todos os endereços de usuários.
-- **POST** `/api/endereco-usuario`: Adiciona um novo endereço de usuário.
+- **GET** `/api/endereco-usuario/listar`: Lista todos os endereços de usuários.
+- **POST** `/api/endereco-usuario/cadastrar`: Adiciona um novo endereço de usuário.
 - **GET** `/api/endereco-usuario/{id}`: Retorna os detalhes de um endereço específico.
 - **PUT** `/api/endereco-usuario/{id}`: Atualiza as informações de um endereço de usuário.
 - **DELETE** `/api/endereco-usuario/{id}`: Remove um endereço de usuário.
@@ -101,8 +101,8 @@ E então é so rodar sua Application!
 ---
 
 ## Contatos
-- **GET** `/api/contato-usuario`: Lista todos os contatos de usuários.
-- **POST** `/api/contato-usuario`: Adiciona um novo contato de usuário.
+- **GET** `/api/contato-usuario/listar`: Lista todos os contatos de usuários.
+- **POST** `/api/contato-usuario/cadastrar`: Adiciona um novo contato de usuário.
 - **GET** `/api/contato-usuario/{id}`: Retorna os detalhes de um contato específico.
 - **PUT** `/api/contato-usuario/{id}`: Atualiza as informações de um contato de usuário.
 - **DELETE** `/api/contato-usuario/{id}`: Remove um contato de usuário.

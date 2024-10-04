@@ -2,14 +2,14 @@
 
 ## Integrantes do Grupo
 
+### Caio Eduardo Nascimento Martins (RM554025)
+**Responsável pelo desenvolvimento em Advanced Business Development with .NET, DevOps Tools & Cloud Computing e Compliance, Quality Assurance & Tests.**
+
 ### Julia Mariano Barsotti Ferreira (RM552713)  
 **Responsável pelo desenvolvimento Java, Mobile Application Development e Compliance, Quality Assurance & Tests.**
 
 ### Leonardo Gaspar Saheb (RM553383)  
 **Responsável pela configuração e gerenciamento do banco de dados, pelo desenvolvimento de Disruptive Architectures: IoT, IoB & Generative AI e Compliance, Quality Assurance & Tests.**
-
-### Caio Eduardo Nascimento Martins (RM554025)
-**Responsável pelo desenvolvimento em Advanced Business Development with .NET, DevOps Tools & Cloud Computing e Compliance, Quality Assurance & Tests.**
 
   ##
 

@@ -1,7 +1,10 @@
 package br.com.fiap.challenge.service;
 
+import br.com.fiap.challenge.controller.dto.AtendimentoUsuarioDTO;
 import br.com.fiap.challenge.entity.AtendimentoUsuarioOdontoprev;
+import br.com.fiap.challenge.entity.UsuarioOdontoprev;
 import br.com.fiap.challenge.repository.AtendimentoUsuarioRepository;
+import br.com.fiap.challenge.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
@@ -14,9 +17,15 @@ public class AtendimentoUsuarioImpl implements AtendimentoUsuarioService {
 
     @Autowired
     private AtendimentoUsuarioRepository atendimentoUsuarioRepository;
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+
     @Override
-    public AtendimentoUsuarioOdontoprev createAtendimentoUsuario(AtendimentoUsuarioOdontoprev atendimentoUsuarioOdontoprev) {
-        return atendimentoUsuarioRepository.save(atendimentoUsuarioOdontoprev);
+    public AtendimentoUsuarioOdontoprev createAtendimentoUsuario(AtendimentoUsuarioDTO request) {
+        UsuarioOdontoprev usuario = usuarioRepository.findById(request.getUsuarioId()).orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+        return atendimentoUsuarioRepository.save(getAtendimentoUsuario(request, usuario));
     }
 
     @Override
@@ -34,11 +43,15 @@ public class AtendimentoUsuarioImpl implements AtendimentoUsuarioService {
     }
 
     @Override
-    public AtendimentoUsuarioOdontoprev updateAtendimentoUsuario(AtendimentoUsuarioOdontoprev atendimentoUsuarioOdontoprev) {
-        AtendimentoUsuarioOdontoprev existingAtendimentoUsuario = atendimentoUsuarioRepository.findById(Long.valueOf(atendimentoUsuarioOdontoprev.getAtendimentoId()))
-                .orElseThrow(() -> new NoSuchElementException("Atendimento não encontrado com o id: " + atendimentoUsuarioOdontoprev.getAtendimentoId()));
+    public AtendimentoUsuarioOdontoprev updateAtendimentoUsuario(Long id, AtendimentoUsuarioDTO atendimentoUsuarioOdontoprev) {
+        AtendimentoUsuarioOdontoprev existingAtendimentoUsuario = atendimentoUsuarioRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("Atendimento não encontrado"));
 
-        existingAtendimentoUsuario.setUsuario(atendimentoUsuarioOdontoprev.getUsuario());
+        UsuarioOdontoprev usuario = usuarioRepository.findById(atendimentoUsuarioOdontoprev.getUsuarioId())
+                .orElseThrow(() -> new NoSuchElementException("Usuário não encontrado com ID: " + atendimentoUsuarioOdontoprev.getUsuarioId()));
+
+
+        existingAtendimentoUsuario.setUsuario(usuario);
         existingAtendimentoUsuario.setDentistaNome(atendimentoUsuarioOdontoprev.getDentistaNome());
         existingAtendimentoUsuario.setClinicaNome(atendimentoUsuarioOdontoprev.getClinicaNome());
         existingAtendimentoUsuario.setDataAtendimento(atendimentoUsuarioOdontoprev.getDataAtendimento());
@@ -51,5 +64,18 @@ public class AtendimentoUsuarioImpl implements AtendimentoUsuarioService {
     @Override
     public void deleteAtendimentoUsuario(Long id) {
         atendimentoUsuarioRepository.deleteById(id);
+    }
+
+    private AtendimentoUsuarioOdontoprev getAtendimentoUsuario(AtendimentoUsuarioDTO request, UsuarioOdontoprev usuario) {
+
+        return AtendimentoUsuarioOdontoprev
+                .builder()
+                .usuario(usuario)
+                .dentistaNome(request.getDentistaNome())
+                .clinicaNome(request.getClinicaNome())
+                .dataAtendimento(request.getDataAtendimento())
+                .descricaoProcedimento(request.getDescricaoProcedimento())
+                .custo(request.getCusto())
+                .build();
     }
 }

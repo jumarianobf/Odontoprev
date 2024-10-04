@@ -21,7 +21,7 @@ public class EnderecoUsuarioController {
     @Autowired
     private EnderecoUsuarioService enderecoUsuarioService;
 
-    @PostMapping
+    @PostMapping("/cadastrar")
     public ResponseEntity<EnderecoUsuarioOdontoprev> cadastrarEndereco (@RequestBody @Valid EnderecoUsuarioDTO enderecoUsuario) {
         try {
             EnderecoUsuarioOdontoprev savedEnderecoUsuario = enderecoUsuarioService.createEnderecoUsuario(enderecoUsuario);
@@ -46,13 +46,13 @@ public class EnderecoUsuarioController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/listar")
     public ResponseEntity<List<EnderecoUsuarioOdontoprev>> buscarTodos() {
         List<EnderecoUsuarioOdontoprev> enderecoUsuario = enderecoUsuarioService.getAllEnderecoUsuario();
         return ResponseEntity.ok(enderecoUsuario);
     }
 
-    @PostMapping("{id}")
+    @PutMapping("{id}")
     public ResponseEntity<EnderecoUsuarioOdontoprev> atualizar (
             @PathVariable("id") Long id,
             @RequestBody @Valid EnderecoUsuarioDTO enderecoUsuario){

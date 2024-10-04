@@ -1,10 +1,8 @@
 package br.com.fiap.challenge.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -15,6 +13,7 @@ import java.time.LocalDateTime;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Table(name = "T_ATENDIMENTO_USUARIO_ODONTOPREV")
 public class AtendimentoUsuarioOdontoprev {
 
@@ -43,7 +42,8 @@ public class AtendimentoUsuarioOdontoprev {
     @Column(name = "custo", precision = 10, scale = 2)
     private BigDecimal custo;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @Column(name = "data_registro", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", insertable = false, updatable = false)
-    private LocalDateTime dataRegistro;
+    private LocalDate dataRegistro;
 
 }

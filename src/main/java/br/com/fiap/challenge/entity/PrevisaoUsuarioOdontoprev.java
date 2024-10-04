@@ -1,9 +1,11 @@
 package br.com.fiap.challenge.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -12,10 +14,10 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "T_PREVISAO_USUARIO_ODONTOPREV")
+@Builder
 public class PrevisaoUsuarioOdontoprev {
 
     @Id
-    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "previsao_usuario_id", length = 10, nullable = false)
     private Long previsaoUsuarioId;
@@ -38,7 +40,8 @@ public class PrevisaoUsuarioOdontoprev {
     @Column(name = "recomendacao", length = 255)
     private String recomendacao;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @Column(name = "data_previsao", insertable = false, updatable = false)
-    private LocalDateTime dataPrevisao;
+    private LocalDate dataPrevisao;
 }
 

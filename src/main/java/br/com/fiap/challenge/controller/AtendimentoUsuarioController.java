@@ -1,5 +1,6 @@
 package br.com.fiap.challenge.controller;
 
+import br.com.fiap.challenge.controller.dto.AtendimentoUsuarioDTO;
 import br.com.fiap.challenge.entity.AtendimentoUsuarioOdontoprev;
 import br.com.fiap.challenge.service.AtendimentoUsuarioService;
 import jakarta.validation.Valid;
@@ -20,8 +21,9 @@ public class AtendimentoUsuarioController {
     @Autowired
     private AtendimentoUsuarioService atendimentoUsuarioService;
 
-    @PostMapping
-    public ResponseEntity<AtendimentoUsuarioOdontoprev> createAtendimentoUsuario(@Valid @RequestBody AtendimentoUsuarioOdontoprev atendimentoUsuario) {
+    @PostMapping("/cadastrar")
+    public ResponseEntity<AtendimentoUsuarioOdontoprev> createAtendimentoUsuario(
+            @Valid @RequestBody AtendimentoUsuarioDTO atendimentoUsuario) {
         try {
             AtendimentoUsuarioOdontoprev savedAtendimento = atendimentoUsuarioService.createAtendimentoUsuario(atendimentoUsuario);
             return new ResponseEntity<>(savedAtendimento, HttpStatus.CREATED);
@@ -32,8 +34,7 @@ public class AtendimentoUsuarioController {
 
     @GetMapping("{id}")
     public ResponseEntity<AtendimentoUsuarioOdontoprev> getAtendimentoUsuarioById(
-            @PathVariable("id") Long id,
-            @Valid @RequestBody AtendimentoUsuarioOdontoprev atendimentoUsuario) {
+            @PathVariable("id") Long id) {
         try {
             AtendimentoUsuarioOdontoprev getIdAtendimento = atendimentoUsuarioService.getById(id);
             if (getIdAtendimento == null) {
@@ -46,16 +47,17 @@ public class AtendimentoUsuarioController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/listar")
     public ResponseEntity<List<AtendimentoUsuarioOdontoprev>> getAllAtendimentoUsuario() {
         List<AtendimentoUsuarioOdontoprev> atendimentoUsuario = atendimentoUsuarioService.getAllAtendimentoUsuario();
         return ResponseEntity.ok(atendimentoUsuario);
     }
 
-    @PostMapping("{id}")
-    public ResponseEntity<AtendimentoUsuarioOdontoprev> updateAtendimentoUsuario(@PathVariable("id") Long id, @RequestBody AtendimentoUsuarioOdontoprev atendimentoUsuario) {
-        atendimentoUsuario.setAtendimentoId(Long.valueOf(String.valueOf(id)));
-        AtendimentoUsuarioOdontoprev updatedAtendimento = atendimentoUsuarioService.updateAtendimentoUsuario(atendimentoUsuario);
+    @PutMapping("{id}")
+    public ResponseEntity<AtendimentoUsuarioOdontoprev> updateAtendimentoUsuario(
+            @PathVariable("id") Long id,
+            @RequestBody @Valid AtendimentoUsuarioDTO atendimentoUsuario) {
+        AtendimentoUsuarioOdontoprev updatedAtendimento = atendimentoUsuarioService.updateAtendimentoUsuario(id, atendimentoUsuario);
         return ResponseEntity.ok(updatedAtendimento);
     }
 

@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"cpf\": \"53025319844\",\r\n    \"nome\": \"Julia \",\r\n    \"sobrenome\": \"Mariano Barsotti Ferreira\",\r\n    \"data_nascimento\": \"30/03/2005\",\r\n    \"genero\": \"F\",\r\n    \"data_Cadastro\": \"01/10/2024\"\r\n}",
+							"raw": "{\r\n    \"cpf\": \"555555555\",\r\n    \"nome\": \"Isabelly\",\r\n    \"sobrenome\": \"Ferreira dos Santos\",\r\n    \"dataNascimento\": \"2005-04-16\",  \r\n    \"genero\": \"F\",\r\n    \"dataCadastro\": \"2024-10-01\" \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -24,7 +24,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/usuario",
+							"raw": "http://localhost:8080/api/usuario/cadastrar",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -32,7 +32,8 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"usuario"
+								"usuario",
+								"cadastrar"
 							]
 						}
 					},
@@ -44,7 +45,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/usuario",
+							"raw": "http://localhost:8080/api/usuario/listar",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -52,7 +53,8 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"usuario"
+								"usuario",
+								"listar"
 							]
 						}
 					},
@@ -64,7 +66,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/usuario/1",
+							"raw": "http://localhost:8080/api/usuario/7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -73,7 +75,7 @@
 							"path": [
 								"api",
 								"usuario",
-								"1"
+								"7"
 							]
 						}
 					},
@@ -84,6 +86,36 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/usuario/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuario",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar usuário",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf\": \"53025319844\",\r\n    \"nome\": \"Isabelly \",\r\n    \"sobrenome\": \"dos Santos Ferreira\",\r\n    \"dataNascimento\": null,\r\n    \"genero\": \"F\",\r\n    \"dataCadastro\": \"2024-01-03\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:8080/api/usuario/1",
 							"protocol": "http",
@@ -97,14 +129,6 @@
 								"1"
 							]
 						}
-					},
-					"response": []
-				},
-				{
-					"name": "Atualizar usuário",
-					"request": {
-						"method": "GET",
-						"header": []
 					},
 					"response": []
 				}
@@ -120,7 +144,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"usuario\": {\r\n    \"usuarioId\": 1,\r\n     \"cpf\": \"53025319844\",\r\n    \"nome\": \"Julia \",\r\n    \"sobrenome\": \"Mariano Barsotti Ferreira\",\r\n    \"data_nascimento\": \"30/03/2005\",\r\n    \"genero\": \"F\",\r\n    \"data_Cadastro\": \"01/10/2024\"\r\n  },\r\n  \"emailUsuario\": \"rm552713@fiap.com.br\",\r\n  \"telefoneUsuario\": \"11947858233\"\r\n}\r\n",
+							"raw": "{\r\n  \"usuarioId\": 1,\r\n  \"emailUsuario\": \"fiap@gmail.com\",\r\n  \"telefoneUsuario\": \"11987654321\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -128,7 +152,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/contato-usuario",
+							"raw": "http://localhost:8080/api/contato-usuario/cadastrar",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -136,7 +160,8 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"contato-usuario"
+								"contato-usuario",
+								"cadastrar"
 							]
 						}
 					},
@@ -146,15 +171,41 @@
 					"name": "buscar todos",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/contato-usuario/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"contato-usuario",
+								"listar"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Deletar contato",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/contato-usuario/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"contato-usuario",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -164,7 +215,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/contato-usuario/1",
+							"raw": "http://localhost:8080/api/contato-usuario/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -173,7 +224,7 @@
 							"path": [
 								"api",
 								"contato-usuario",
-								"1"
+								"4"
 							]
 						}
 					},
@@ -182,8 +233,30 @@
 				{
 					"name": "Atualizar contato",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"usuarioId\": 1,\r\n  \"emailUsuario\": \"jumarianobf@gmail.com\",\r\n  \"telefoneUsuario\": \"11947858233\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/contato-usuario/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"contato-usuario",
+								"4"
+							]
+						}
 					},
 					"response": []
 				}
@@ -199,7 +272,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
+							"raw": "{\r\n    \"usuarioId\": 1,\r\n    \"cepUsuario\": \"04127-010\",\r\n    \"cidadeUsuario\": \"São Paulo\",\r\n    \"estadoUsuario\": \"SP\",\r\n    \"logradouroUsuario\": \"Rua Embaixador Raul Garcia\",\r\n    \"bairroUsuario\": \"Vila Mariana\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -207,7 +280,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/endereco-usuario",
+							"raw": "http://localhost:8080/api/endereco-usuario/cadastrar",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -215,7 +288,8 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"endereco-usuario"
+								"endereco-usuario",
+								"cadastrar"
 							]
 						}
 					},
@@ -225,7 +299,20 @@
 					"name": "buscar todos",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/endereco-usuario/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"endereco-usuario",
+								"listar"
+							]
+						}
 					},
 					"response": []
 				},
@@ -233,7 +320,20 @@
 					"name": "buscar por id",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/endereco-usuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"endereco-usuario",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -261,11 +361,11 @@
 				{
 					"name": "atualizar endereco",
 					"request": {
-						"method": "POST",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
+							"raw": "{\r\n    \"usuarioId\": 8,\r\n    \"cepUsuario\": \"04127-010\",\r\n    \"cidadeUsuario\": \"São Paulo\",\r\n    \"estadoUsuario\": \"SP\",\r\n    \"logradouroUsuario\": \"Rua Doutor Ruy de azevedo sodre\",\r\n    \"bairroUsuario\": \"Vila Santa Catarina\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -292,15 +392,366 @@
 		},
 		{
 			"name": "Imagem Usuário",
-			"item": []
+			"item": [
+				{
+					"name": "criar imagem",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  \r\n  {\r\n    \"usuarioId\": 5,\r\n    \"imagemUrl\": \"https://www.google.com/imgres?q=corinthians&imgurl=https%3A%2F%2Fs3.static.brasilescola.uol.com.br%2Fbe%2F2023%2F09%2F1-escudo-do-corinthians.jpg\",\r\n    \"dataEnvio\": \"2024-10-03\"\r\n}\r\n\r\n  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/imagem-usuario/cadastrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"imagem-usuario",
+								"cadastrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/imagem-usuario/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"imagem-usuario",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/endereco-usuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"endereco-usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar imagem",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"usuarioId\": 5,\r\n    \"imagemUrl\": \"https://www.google.com/imgres?q=corinthians&imgurl=https%3A%2F%2Fs3.static.brasilescola.uol.com.br%2Fbe%2F2023%2F09%2F1-escudo-do-corinthians.jpg\",\r\n    \"dataEnvio\": \"2024-10-03\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/imagem-usuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"imagem-usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Previsão Usuário",
-			"item": []
+			"item": [
+				{
+					"name": "criar previsão",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"usuarioId\": 1,\r\n  \"imagemUsuarioId\": 1,\r\n  \"previsaoTexto\": \"Esta é uma previsão de exemplo com menos de 255 caracteres.\",\r\n  \"probabilidade\": 0.85,\r\n  \"recomendacao\": \"Considere revisar as informações antes de tomar uma decisão.\",\r\n  \"dataPrevisao\": \"2024-10-03\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/previsao-usuario/cadastrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"previsao-usuario",
+								"cadastrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/previsao-usuario/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"previsao-usuario",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/previsao-usuario/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"previsao-usuario",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/previsao-usuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"previsao-usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"usuarioId\": 1,\r\n  \"imagemUsuarioId\": 1,\r\n  \"previsaoTexto\": \"Esta é uma previsão de exemplo com menos de 255 caracteres.\",\r\n  \"probabilidade\": 0.4,\r\n  \"recomendacao\": \"Considere revisar as informações antes de tomar uma decisão.\",\r\n  \"dataPrevisao\": \"2024-10-03\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/previsao-usuario/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"previsao-usuario",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Atendimento Usuário",
-			"item": []
+			"item": [
+				{
+					"name": "criar atendimento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"usuarioId\": 1,\r\n  \"dentistaNome\": \"Dr. Julia Mariano\",\r\n  \"clinicaNome\": \"Clínica OdontoPrev\",\r\n  \"dataAtendimento\": \"2024-10-03\",\r\n  \"descricaoProcedimento\": \"Limpeza e avaliação geral.\",\r\n  \"custo\": 1650.00,\r\n  \"dataRegistro\": \"2024-10-03\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/atendimento-usuario/cadastrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"atendimento-usuario",
+								"cadastrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar atendimento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/atendimento-usuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"atendimento-usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/atendimento-usuario/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"atendimento-usuario",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar atendimento",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n  \"usuarioId\": 8,\r\n  \"dentistaNome\": \"Dr. Isabelly Ferreira\",\r\n  \"clinicaNome\": \"Clínica OdontoPrev\",\r\n  \"dataAtendimento\": \"2024-10-03\",\r\n  \"descricaoProcedimento\": \"Manuntenção aparelho.\",\r\n  \"custo\": 550.00,\r\n  \"dataRegistro\": \"2024-10-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/atendimento-usuario/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"atendimento-usuario",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/atendimento-usuario/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"atendimento-usuario",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

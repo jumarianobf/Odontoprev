@@ -1,5 +1,6 @@
 package br.com.fiap.challenge.controller;
 
+import br.com.fiap.challenge.controller.dto.PrevisaoUsuarioDTO;
 import br.com.fiap.challenge.entity.PrevisaoUsuarioOdontoprev;
 import br.com.fiap.challenge.service.PrevisaoUsuarioService;
 import jakarta.validation.Valid;
@@ -20,8 +21,9 @@ public class PrevisaoUsuarioController {
     @Autowired
     private PrevisaoUsuarioService previsaoUsuarioService;
 
-    @PostMapping
-    public ResponseEntity<PrevisaoUsuarioOdontoprev> cadastrarPrevisaoUsuario(@RequestBody @Valid PrevisaoUsuarioOdontoprev previsaoUsuarioOdontoprev) {
+    @PostMapping("/cadastrar")
+    public ResponseEntity<PrevisaoUsuarioOdontoprev> cadastrarPrevisaoUsuario(
+            @RequestBody @Valid PrevisaoUsuarioDTO previsaoUsuarioOdontoprev) {
         try {
             PrevisaoUsuarioOdontoprev previsaoUsuarioOdontoprevSalva = previsaoUsuarioService.createPrevisaoUsuario(previsaoUsuarioOdontoprev);
             return new ResponseEntity<>(previsaoUsuarioOdontoprevSalva, HttpStatus.CREATED);
@@ -31,31 +33,31 @@ public class PrevisaoUsuarioController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<PrevisaoUsuarioOdontoprev> getPrevisaoUsuarioById(@PathVariable("id") Long id, @RequestBody @Valid PrevisaoUsuarioOdontoprev previsaoUsuarioOdontoprev) {
+    public ResponseEntity<PrevisaoUsuarioOdontoprev> getPrevisaoUsuarioById(
+            @PathVariable("id") Long id) {
         try {
             PrevisaoUsuarioOdontoprev previsaoUsuario = previsaoUsuarioService.getById(id);
-            if (previsaoUsuarioOdontoprev == null) {
+            if (previsaoUsuario == null) {
                 return ResponseEntity.notFound().build();
             } else {
-                return ResponseEntity.ok(previsaoUsuarioOdontoprev);
+                return ResponseEntity.ok(previsaoUsuario);
             }
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }
     }
 
-    @GetMapping
+    @GetMapping("/listar")
     public ResponseEntity<List<PrevisaoUsuarioOdontoprev>> getAllPrevisaoUsuario() {
         List<PrevisaoUsuarioOdontoprev> previsaoUsuarioOdontoprev = previsaoUsuarioService.getAllPrevisaoUsuario();
         return ResponseEntity.ok(previsaoUsuarioOdontoprev);
     }
 
-    @PostMapping("{id}")
+    @PutMapping("{id}")
     public ResponseEntity<PrevisaoUsuarioOdontoprev> updatePrevisaoUsuario(
             @PathVariable("id") Long id,
-            @RequestBody PrevisaoUsuarioOdontoprev previsaoUsuarioOdontoprev) {
-        previsaoUsuarioOdontoprev.setPrevisaoUsuarioId(Long.valueOf(String.valueOf(id)));
-        PrevisaoUsuarioOdontoprev previsaoUsuarioOdontoprevAtualizada = previsaoUsuarioService.updatePrevisaoUsuario(previsaoUsuarioOdontoprev);
+            @RequestBody PrevisaoUsuarioDTO previsaoUsuarioOdontoprev) {
+        PrevisaoUsuarioOdontoprev previsaoUsuarioOdontoprevAtualizada = previsaoUsuarioService.updatePrevisaoUsuario(id, previsaoUsuarioOdontoprev);
         return ResponseEntity.ok(previsaoUsuarioOdontoprevAtualizada);
     }
 

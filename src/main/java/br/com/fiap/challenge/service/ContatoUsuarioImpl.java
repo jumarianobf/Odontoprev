@@ -24,7 +24,8 @@ public class ContatoUsuarioImpl implements ContatoUsuarioService {
     @Override
     public ContatoUsuarioOdontoprev createContatoUsuario(ContatoUsuarioDTO request) {
         // Busca o usuário pelo ID fornecido no objeto contatoUsuario
-        UsuarioOdontoprev usuario = usuarioRepository.findById(request.getUsuarioId()).orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+        UsuarioOdontoprev usuario = usuarioRepository.findById(request.getUsuarioId())
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
         return contatoUsuarioRepository.save(getContatoUsuario(request, usuario));
     }
 

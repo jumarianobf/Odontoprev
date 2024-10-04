@@ -24,7 +24,7 @@ public class ContatoUsuarioController {
     private ContatoUsuarioService contatoUsuarioService;
 
 
-    @PostMapping
+    @PostMapping("/cadastrar")
     public ResponseEntity<ContatoUsuarioOdontoprev> cadastrar( @RequestBody @Valid ContatoUsuarioDTO contatoUsuario) {
         try {
             ContatoUsuarioOdontoprev savedContatoUsuario = contatoUsuarioService.createContatoUsuario(contatoUsuario);
@@ -45,13 +45,13 @@ public class ContatoUsuarioController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/listar")
     public ResponseEntity<List<ContatoUsuarioOdontoprev>> buscarTodos() {
         List<ContatoUsuarioOdontoprev> contatos = contatoUsuarioService.getAllContatoUsuario();
         return ResponseEntity.ok(contatos);
     }
 
-    @PostMapping("{id}")
+    @PutMapping("{id}")
     public ResponseEntity<ContatoUsuarioOdontoprev> atualizar(
             @PathVariable("id") Long id,
             @RequestBody @Valid ContatoUsuarioDTO contatoUsuario) {

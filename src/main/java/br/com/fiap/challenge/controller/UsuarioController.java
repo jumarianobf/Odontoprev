@@ -21,7 +21,7 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @PostMapping
+    @PostMapping("/cadastrar")
     public ResponseEntity<UsuarioOdontoprev> createUsuario (@RequestBody @Valid UsuarioOdontoprev usuario) {
         try {
             UsuarioOdontoprev savedUsuario = usuarioService.createUsuario(usuario);
@@ -45,13 +45,13 @@ public class UsuarioController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/listar")
     public ResponseEntity<List<UsuarioOdontoprev>> getAllUsuario() throws ChangeSetPersister.NotFoundException {
         List<UsuarioOdontoprev> usuario = usuarioService.getAllUsuario();
         return ResponseEntity.ok(usuario);
     }
 
-    @PostMapping("{id}")
+    @PutMapping("{id}")
     public ResponseEntity<UsuarioOdontoprev> updateUsuario (
             @PathVariable("id") Long id,
             @RequestBody @Valid UsuarioOdontoprev usuario){

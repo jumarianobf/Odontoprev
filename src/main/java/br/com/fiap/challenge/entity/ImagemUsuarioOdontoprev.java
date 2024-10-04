@@ -1,9 +1,10 @@
 package br.com.fiap.challenge.entity;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Data
@@ -11,16 +12,16 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "T_IMAGEM_USUARIO_ODONTOPREV")
+@Builder
 public class ImagemUsuarioOdontoprev {
 
     @Id
-    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "imagem_usuario_id", length = 10, nullable = false)
+    @Column(name = "imagem_usuario_id", nullable = false)
     private Long imagemUsuarioId;
 
     @NotNull
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "usuario_id", nullable = false)
     private UsuarioOdontoprev usuario;
 
@@ -29,7 +30,7 @@ public class ImagemUsuarioOdontoprev {
     private String imagemUrl;
 
     @NotNull
-    @Column(name = "data_envio", insertable = false, updatable = false)
-    private LocalDateTime dataEnvio;
-}
+    @Column(name = "data_envio", nullable = false)
+    private LocalDate dataEnvio;
 
+}

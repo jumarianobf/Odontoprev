@@ -1,5 +1,6 @@
 package br.com.fiap.challenge.controller;
 
+import br.com.fiap.challenge.controller.dto.ImagemUsuarioDTO;
 import br.com.fiap.challenge.entity.ImagemUsuarioOdontoprev;
 import br.com.fiap.challenge.service.ImagemUsuarioService;
 import jakarta.validation.Valid;
@@ -20,8 +21,10 @@ public class ImagemUsuarioController {
     @Autowired
     private ImagemUsuarioService imagemUsuarioService;
 
-    @PostMapping
-    public ResponseEntity<ImagemUsuarioOdontoprev> cadastrar (@RequestBody @Valid ImagemUsuarioOdontoprev imagemUsuario) {
+    @PostMapping("/cadastrar")
+    public ResponseEntity<ImagemUsuarioOdontoprev> cadastrar (
+            @RequestBody @Valid ImagemUsuarioDTO imagemUsuario) {
+        System.out.println("ImagemUsuarioDTO recebido: " + imagemUsuario);
         try {
             ImagemUsuarioOdontoprev savedImagemUsuario = imagemUsuarioService.createImagemUsuario(imagemUsuario);
             return new ResponseEntity<>(savedImagemUsuario, HttpStatus.CREATED);
@@ -32,8 +35,7 @@ public class ImagemUsuarioController {
 
     @GetMapping("{id}")
     public ResponseEntity<ImagemUsuarioOdontoprev> buscarPorId (
-            @PathVariable("id")Long id,
-            @RequestBody @Valid ImagemUsuarioOdontoprev imagemUsuario){
+            @PathVariable("id")Long id){
         try {
             ImagemUsuarioOdontoprev getIdImagemUsuario = imagemUsuarioService.getById(id);
             if(getIdImagemUsuario == null){
@@ -46,16 +48,17 @@ public class ImagemUsuarioController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/listar")
     public ResponseEntity<List<ImagemUsuarioOdontoprev>> buscarTodos() {
         List<ImagemUsuarioOdontoprev> imagemUsuario = imagemUsuarioService.getAllImagemUsuario();
         return ResponseEntity.ok(imagemUsuario);
     }
 
-    @PostMapping("{id}")
-    public ResponseEntity<ImagemUsuarioOdontoprev> atualizar (@PathVariable("id") Long id, @RequestBody @Valid ImagemUsuarioOdontoprev imagemUsuario){
-        imagemUsuario.setImagemUsuarioId(Long.valueOf(String.valueOf(id)));
-        ImagemUsuarioOdontoprev updatedImagemUsuario = imagemUsuarioService.updateImagemUsuario(imagemUsuario);
+    @PutMapping("{id}")
+    public ResponseEntity<ImagemUsuarioOdontoprev> atualizar (
+            @PathVariable("id") Long id,
+            @RequestBody @Valid ImagemUsuarioDTO imagemUsuario){
+        ImagemUsuarioOdontoprev updatedImagemUsuario = imagemUsuarioService.updateImagemUsuario(id, imagemUsuario);
         return ResponseEntity.ok(updatedImagemUsuario);
     }
 

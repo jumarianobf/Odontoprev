@@ -14,31 +14,49 @@
 **Responsável pelo desenvolvimento em Advanced Business Development with .NET,**  
 **DevOps Tools & Cloud Computing e Compliance, Quality Assurance & Tests.**
 
+  ##
 
-## Instruções para Rodar a Aplicação
+## Pré-requisitos
+Para rodar este projeto, você precisará ter os seguintes itens instalados em sua máquina:
+
+- **JDK (Java Development Kit)**: Certifique-se de ter o JDK instalado, pois é necessário para compilar e rodar aplicações Java.
+- **Java 17+**: A aplicação foi desenvolvida usando a versão 17 ou superior do Java.
+- **Maven**: O Maven é utilizado para gerenciar as dependências e compilar o projeto.
+
+  ##
+  
+# Instruções para Rodar a Aplicação
 
 ### 1. Clonar o Repositório
 Primeiro, clone o repositório do projeto para sua máquina local. No terminal, execute:
 
 ```bash
 git clone https://github.com/seu-usuario/odontoprev-project.git
-
-Acesse o diretório do projeto clonado:
-cd odontoprev-project
-
-Compile o projeto usando o Maven, pulando os testes. Execute o seguinte comando:
-mvn clean package -Dmaven.test.skip=true
-
-Após a compilação, o Maven irá gerar um arquivo JAR no diretório target. O caminho do arquivo JAR será:
-<seu_diretorio_do_projeto>\target\<nome_do_projeto>-<versao>.jar
 ```
 
+Acesse o diretório do projeto clonado:
+```
+cd odontoprev-project
+```
+Compile o projeto usando o Maven, pulando os testes. Execute o seguinte comando:
+```
+mvn clean package -Dmaven.test.skip=true
+```
+Após a compilação, o Maven irá gerar um arquivo JAR no diretório target. O caminho do arquivo JAR será:
+```
+<seu_diretorio_do_projeto>\target\<nome_do_projeto>-<versao>.jar
+```
+E então é so rodar sua Application!
+
+  ##
+  
 ## Imagem dos Diagramas
 
 (Imagem dos diagramas aqui.)
 
 ## Vídeo de Apresentação
 
+  ##
 
 # Documentação da API
 

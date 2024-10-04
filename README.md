@@ -49,7 +49,10 @@ E então é so rodar seu Application!
   
 ## Imagem dos Diagramas
 
-(Imagem dos diagramas aqui.)
+![Diagrama de Entidade e Relacionamento (DER)](https://github.com/jumarianobf/Odontoprev/blob/main/Relational_Sprint1.png)
+
+![Diagrama de Classes de Entidade](https://github.com/jumarianobf/Odontoprev/blob/main/Odontoprev.drawio%20(1).png)
+
 
 ## Vídeo de Apresentação
 

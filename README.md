@@ -6,10 +6,10 @@
 **Responsável pelo desenvolvimento em Advanced Business Development with .NET, DevOps Tools & Cloud Computing e Compliance, Quality Assurance & Tests.**
 
 ### Julia Mariano Barsotti Ferreira (RM552713)  
-**Responsável pelo desenvolvimento Java, Mobile Application Development e Compliance, Quality Assurance & Tests.**
+**Responsável pelo desenvolvimento Java Advanced, Mobile Application Development e Compliance, Quality Assurance & Tests.**
 
 ### Leonardo Gaspar Saheb (RM553383)  
-**Responsável pela configuração e gerenciamento do banco de dados, pelo desenvolvimento de Disruptive Architectures: IoT, IoB & Generative AI e Compliance, Quality Assurance & Tests.**
+**Responsável pelo desenvolvimento em Mastering Relational and Non-Relational Database, Disruptive Architectures: IoT, IoB & Generative AI e Compliance, Quality Assurance & Tests.**
 
   ##
 

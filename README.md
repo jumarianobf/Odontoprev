@@ -56,6 +56,8 @@ E então é so rodar seu Application!
 
 ## Vídeo de Apresentação
 
+![Link video apresentando proposta tecnológica] (https://www.youtube.com/watch?v=9aIgBieK4Hk)
+  
   ##
 
 # Documentação da API

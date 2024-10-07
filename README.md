@@ -73,7 +73,7 @@ E então é so rodar seu Application!
 
 # Documentação da API
 
-##Usuários
+## Usuários
 - **GET** `/api/usuarios/listar`: Lista todos os usuários.
 - **POST** `/api/usuarios/cadastrar`: Cria um novo usuário.
 - **GET** `/api/usuarios/{id}`: Retorna os detalhes de um id (do usuario) específico.

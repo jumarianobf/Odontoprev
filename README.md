@@ -60,14 +60,14 @@ E então é so rodar seu Application!
   
 ## Imagem dos Diagramas
 ### Sprint 1 
-![Diagrama de Entidade e Relacionamento (DER)](https://github.com/jumarianobf/Odontoprev/blob/main/Relational_Sprint1.png)
+![Diagrama de Entidade e Relacionamento (DER)](https://github.com/jumarianobf/Odontoprev/blob/main/imagens/Relational_Sprint1.png)
 
 ![Diagrama de Classes de Entidade](https://github.com/jumarianobf/Odontoprev/blob/main/imagens/Odontoprev.drawio%20(sprint_1).png)
 
 ##
 
 ### Sprint 2
-![Diagrama de Entidade e Relacionamento (DER)](https://github.com/jumarianobf/Odontoprev/blob/main/DER_Sprint1.png)
+![Diagrama de Entidade e Relacionamento (DER)](https://github.com/jumarianobf/Odontoprev/blob/main/imagens/DER_Sprint_2.png)
 
 ![Diagrama de Classes de Entidade](https://github.com/jumarianobf/Odontoprev/blob/main/imagens/Odontoprev.drawio%20(sprint_2).png)
 

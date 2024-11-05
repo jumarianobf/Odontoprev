@@ -59,11 +59,17 @@ E então é so rodar seu Application!
   ##
   
 ## Imagem dos Diagramas
-
+### Sprint 1 
 ![Diagrama de Entidade e Relacionamento (DER)](https://github.com/jumarianobf/Odontoprev/blob/main/Relational_Sprint1.png)
 
-![Diagrama de Classes de Entidade](https://github.com/jumarianobf/Odontoprev/blob/main/Odontoprev.drawio%20(1).png)
+![Diagrama de Classes de Entidade](https://github.com/jumarianobf/Odontoprev/blob/main/imagens/Odontoprev.drawio%20(sprint_1).png)
 
+##
+
+### Sprint 2
+![Diagrama de Entidade e Relacionamento (DER)](https://github.com/jumarianobf/Odontoprev/blob/main/DER_Sprint1.png)
+
+![Diagrama de Classes de Entidade](https://github.com/jumarianobf/Odontoprev/blob/main/imagens/Odontoprev.drawio%20(sprint_2).png)
 
 ## Vídeo de Apresentação
 
@@ -118,9 +124,26 @@ E então é so rodar seu Application!
 
 ## Contatos
 - **GET** `/api/contato-usuario/listar`: Lista todos os contatos de usuários.
-- **POST** `/api/contato-usuario/cadastrar`: Adiciona um novo contato de usuário.
+- **POST** `/api/contato-usuario/cadastro`: Adiciona um novo contato de usuário.
 - **GET** `/api/contato-usuario/{id}`: Retorna os detalhes de um contato específico.
 - **PUT** `/api/contato-usuario/{id}`: Atualiza as informações de um contato de usuário.
 - **DELETE** `/api/contato-usuario/{id}`: Remove um contato de usuário.
 
+---
+
+## Dentistas
+- **GET** `/api/dentista/listar`: Lista todos os dentistas.
+- **POST** `/api/dentista/cadastrar`: Adiciona um novo dentista.
+- **GET** `/api/dentista/{id}`: Retorna os detalhes de um dentista específico.
+- **PUT** `/api/dentista/{id}`: Atualiza as informações de um dentista.
+- **DELETE** `/api/dentista/{id}`: Remove um dentista.
+
+---
+
+## Clínicas
+- **GET** `/api/clinica/listar`: Lista todas as clínicas.
+- **POST** `/api/clinica/cadastrar`: Adiciona uma nova clínica.
+- **GET** `/api/clinica/{id}`: Retorna os detalhes de uma clínicas específica.
+- **PUT** `/api/clinica/{id}`: Atualiza as informações de uma clínica.
+- **DELETE** `/api/clinica/{id}`: Remove uma clínica.
 

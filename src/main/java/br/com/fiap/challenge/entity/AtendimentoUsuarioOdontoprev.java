@@ -26,11 +26,13 @@ public class AtendimentoUsuarioOdontoprev {
     @JoinColumn(name = "usuario_id", nullable = false)
     private UsuarioOdontoprev usuario;
 
-    @Column(name = "dentista_nome", length = 100, nullable = false)
-    private String dentistaNome;
+    @ManyToOne
+    @JoinColumn(name = "dentista_id", nullable = false)
+    private DentistaOdontoprev dentista;
 
-    @Column(name = "clinica_nome", length = 100, nullable = false)
-    private String clinicaNome;
+    @ManyToOne
+    @JoinColumn(name = "clinica_id", referencedColumnName = "clinica_id")
+    private ClinicaOdontoprev clinica;
 
     @Column(name = "data_atendimento", nullable = false)
     private LocalDate dataAtendimento;

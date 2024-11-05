@@ -12,7 +12,7 @@ public interface UsuarioService {
 
     List<UsuarioOdontoprev> getAllUsuario() ;
 
-    UsuarioOdontoprev updateUsuario (UsuarioOdontoprev usuario);
+    UsuarioOdontoprev updateUsuario (Long id, UsuarioOdontoprev usuario);
 
     void deleteUsuario (Long id);
 

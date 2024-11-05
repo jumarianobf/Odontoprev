@@ -36,7 +36,7 @@ public class UsuarioImpl implements UsuarioService {
 
 
     @Override
-    public UsuarioOdontoprev updateUsuario(UsuarioOdontoprev usuario) {
+    public UsuarioOdontoprev updateUsuario(Long id, UsuarioOdontoprev usuario) {
         UsuarioOdontoprev existingUsuario = usuarioRepository.findById(Long.valueOf(usuario.getUsuarioId()))
                         .orElseThrow( () -> new RuntimeException("Usuario com id não encontrado: " + usuario.getUsuarioId()));
 

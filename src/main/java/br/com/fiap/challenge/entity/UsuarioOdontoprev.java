@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 @Builder
 @Entity
@@ -17,7 +18,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "T_USUARIO_ODONTOPREV")
-public class UsuarioOdontoprev {
+public class UsuarioOdontoprev  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

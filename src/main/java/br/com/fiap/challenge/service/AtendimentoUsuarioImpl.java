@@ -2,6 +2,7 @@ package br.com.fiap.challenge.service;
 
 import br.com.fiap.challenge.controller.dto.AtendimentoUsuarioDTO;
 import br.com.fiap.challenge.entity.AtendimentoUsuarioOdontoprev;
+import br.com.fiap.challenge.entity.DentistaOdontoprev;
 import br.com.fiap.challenge.entity.UsuarioOdontoprev;
 import br.com.fiap.challenge.repository.AtendimentoUsuarioRepository;
 import br.com.fiap.challenge.repository.UsuarioRepository;
@@ -20,7 +21,6 @@ public class AtendimentoUsuarioImpl implements AtendimentoUsuarioService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
-
 
     @Override
     public AtendimentoUsuarioOdontoprev createAtendimentoUsuario(AtendimentoUsuarioDTO request) {
@@ -52,8 +52,8 @@ public class AtendimentoUsuarioImpl implements AtendimentoUsuarioService {
 
 
         existingAtendimentoUsuario.setUsuario(usuario);
-        existingAtendimentoUsuario.setDentistaNome(atendimentoUsuarioOdontoprev.getDentistaNome());
-        existingAtendimentoUsuario.setClinicaNome(atendimentoUsuarioOdontoprev.getClinicaNome());
+        existingAtendimentoUsuario.setDentista(atendimentoUsuarioOdontoprev.getDentistaId());
+        existingAtendimentoUsuario.setClinica(atendimentoUsuarioOdontoprev.getClinicaId());
         existingAtendimentoUsuario.setDataAtendimento(atendimentoUsuarioOdontoprev.getDataAtendimento());
         existingAtendimentoUsuario.setDescricaoProcedimento(atendimentoUsuarioOdontoprev.getDescricaoProcedimento());
         existingAtendimentoUsuario.setCusto(atendimentoUsuarioOdontoprev.getCusto());
@@ -71,8 +71,8 @@ public class AtendimentoUsuarioImpl implements AtendimentoUsuarioService {
         return AtendimentoUsuarioOdontoprev
                 .builder()
                 .usuario(usuario)
-                .dentistaNome(request.getDentistaNome())
-                .clinicaNome(request.getClinicaNome())
+                .dentista(request.getDentistaId())
+                .clinica(request.getClinicaId())
                 .dataAtendimento(request.getDataAtendimento())
                 .descricaoProcedimento(request.getDescricaoProcedimento())
                 .custo(request.getCusto())

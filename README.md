@@ -20,6 +20,17 @@ Para rodar este projeto, você precisará ter os seguintes itens instalados em s
 - **Java 17+**: A aplicação foi desenvolvida usando a versão 17 ou superior do Java.
 - **Maven**: O Maven é utilizado para gerenciar as dependências e compilar o projeto.
 
+Documentação de Configuração do Banco de Dados
+#### Configurações do DataSource:
+```
+spring.datasource.url=jdbc:mysql://localhost/challenge?createDatabaseIfNotExist=true&useSSL=true
+spring.datasource.username=<SEU_USUARIO>
+spring.datasource.password=<SUA_SENHA>
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.hibernate.ddl-auto=update
+```
+
   ##
   
 # Instruções para Rodar a Aplicação
@@ -49,15 +60,20 @@ E então é so rodar seu Application!
   
 ## Imagem dos Diagramas
 
-(Imagem dos diagramas aqui.)
+![Diagrama de Entidade e Relacionamento (DER)](https://github.com/jumarianobf/Odontoprev/blob/main/Relational_Sprint1.png)
+
+![Diagrama de Classes de Entidade](https://github.com/jumarianobf/Odontoprev/blob/main/Odontoprev.drawio%20(1).png)
+
 
 ## Vídeo de Apresentação
 
+### Link video apresentando proposta tecnológica -> https://www.youtube.com/watch?v=9aIgBieK4Hk
+  
   ##
 
 # Documentação da API
 
-##Usuários
+## Usuários
 - **GET** `/api/usuarios/listar`: Lista todos os usuários.
 - **POST** `/api/usuarios/cadastrar`: Cria um novo usuário.
 - **GET** `/api/usuarios/{id}`: Retorna os detalhes de um id (do usuario) específico.
